@@ -155,11 +155,15 @@ echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\
       export_env_dir $env_dir
     fi
 
+    if [ -z "$NODE_ENV" ];
+      $NODE_ENV = "production"
+    fi
+
     # make sure that grunt and grunt-cli are installed locally
     npm install grunt-cli
     npm install grunt
-    echo "-----> Found Gruntfile, running grunt heroku:$NODE_ENV task"
-    $build_dir/node_modules/.bin/grunt heroku:$NODE_ENV
+    echo "-----> Found Gruntfile, running grunt dokku:$NODE_ENV task"
+    $build_dir/node_modules/.bin/grunt dokku:$NODE_ENV
 
     status "Pruning dev dependencies"
     npm prune --production 2>&1 | indent
