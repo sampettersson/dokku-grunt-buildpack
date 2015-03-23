@@ -155,7 +155,7 @@ echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\
       export_env_dir $env_dir
     fi
 
-    if [ -z "$NODE_ENV" ];
+    if [ -z "$NODE_ENV" ]; then
       $NODE_ENV = "production"
     fi
 
