@@ -156,7 +156,7 @@ echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\
     fi
 
     if [ -z "$NODE_ENV" ]; then
-      $NODE_ENV = "production"
+      export NODE_ENV=production
     fi
 
     # make sure that grunt and grunt-cli are installed locally
